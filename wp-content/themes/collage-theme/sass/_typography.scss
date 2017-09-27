@@ -1,0 +1,53 @@
+/* links */
+a {
+	color: #BA209B;
+	text-decoration: none;
+	&:hover {
+		color: #D424B1;
+	}
+}
+/* paragraphs */
+p {
+	line-height: 1.5;
+}
+/*blockquotes*/
+blockquote {
+	background: #F7F7F7;
+	margin: 0;
+	padding: 20px;
+	p {
+		margin-top: 0;
+	}
+}
+/*lists*/
+ul li, ol li {
+	padding: 3px;
+}
+/*
+====================================
+Global Classes / Wordpress Specific
+====================================
+*/
+.aligncenter {
+	text-align: center;
+	margin: 0 auto;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+img {
+	&.alignleft {
+		padding-right: 5px;
+	}
+	&.alignright {
+		padding-left: 5px;
+	}
+}
+.clear {
+	width: 100%;
+	float: left;
+	clear: both;
+}

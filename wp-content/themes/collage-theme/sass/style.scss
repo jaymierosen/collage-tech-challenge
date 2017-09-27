@@ -1,0 +1,44 @@
+/*!
+* Theme Name: Collage Theme
+* Theme URI: https://www.collage.co
+* Description: Starter theme for Collage.
+* Version: 1.0
+* Author: Jaymie Rosen
+* Author URI: http://jaymierosen.com
+*/
+@import 'normalize';
+@import 'typography';
+@import 'sidebar';
+@import 'footer';
+/*
+====================================
+Default Styling
+====================================
+*/
+body {
+	color: #333;
+	font-family: serif;
+}
+img {
+	max-width: 100%;
+}
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.content {
+	float: left;
+	width: 65%;
+	margin-right: 5%;
+}
+.full {
+	width: 100%;
+}
+
+
+
+
+
+
+
+
