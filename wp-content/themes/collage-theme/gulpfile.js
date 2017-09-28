@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+var gulp  = require('gulp'),
 		browserSync = require('browser-sync'),
 		reload = browserSync.reload,
 		autoprefixer = require('gulp-autoprefixer'),
@@ -10,12 +10,14 @@ var gulp = require('gulp'),
 		sass = require('gulp-sass'),
 		sourcemaps = require('gulp-sourcemaps'),
 		uglify = require('gulp-uglify');
+
 gulp.task('bs', function() {
 	browserSync.init({
 		// if running on windows, change this to http://localhost
 		proxy: 'http://localhost:8888'
 	});
 });
+
 gulp.task('styles', function() {
 	return gulp.src('./sass/**/*.scss')
 		.pipe(plumber({
@@ -30,6 +32,7 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('./'))
 		.pipe(reload({ stream: true }));
 });
+
 gulp.task('scripts', function () {
 	return gulp.src('./js/scripts.js')
 		.pipe(plumber({
@@ -40,15 +43,18 @@ gulp.task('scripts', function () {
 		.pipe(gulp.dest('./js'))
 		.pipe(reload({stream:true}));
 });
+
 gulp.task('images', function () {
 	return gulp.src('./images/**/*')
 		.pipe(imageMin())
 		.pipe(gulp.dest('./images'));
 });
+
 // configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function() {
 	gulp.watch('sass/**/*.scss', ['styles']);
 	gulp.watch('./js/**/*.js', ['scripts']);
 	gulp.watch('./**/*.php', reload);
 });
+
 gulp.task('default', ['styles', 'scripts', 'images', 'bs', 'watch']);

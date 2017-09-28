@@ -3,7 +3,7 @@
 
 
 /* TEAM */
-  <your title>: Jaymie Rosen
+  Collage Theme by Jaymie Rosen
   Site: jaymierosen.com
   Twitter: @jaymierosen
   Location: Toronto
