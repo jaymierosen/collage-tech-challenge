@@ -1,36 +1,21 @@
 /*!
-* Theme Name: BORN
+* Theme Name: Collage Theme
 * Theme URI: http://www.jaymierosen.com;
-* Description: Fresh & clean theme for anyone with a musical talent. * Rename this to your own theme page.
+* Description: Theme for Collage
 * Version: 1.0
 * Author: Jaymie Rosen
 * Author URI: http://www.jaymierosen.com
 */
-
 @import 'var';
 @import 'global';
 @import 'normalize';
-@import 'typography';
 @import 'navigation';
 @import 'header';
 @import 'page';
-@import 'blog';
-@import 'front-page';
 @import 'sidebar';
 @import 'contact';
 @import 'comments';
 @import 'footer';
-// @include font-face(Samplino, fonts/Samplino);
-/*
-====================================
-Default Styling
-====================================
-*/
-
-@font-face{font-family:"Circular";src:url("../fonts/Circular/Circular-Bold-WebPro/lineto-circular-pro-bold.eot");src:url("../fonts/Circular/Circular-Bold-WebPro/lineto-circular-pro-bold.eot?#iefix") format("embedded-opentype"),url("../fonts/Circular/Circular-Bold-WebPro/lineto-circular-pro-bold.woff2") format("woff2"),url("../fonts/Circular/Circular-Bold-WebPro/lineto-circular-pro-bold.woff") format("woff");font-weight:600;font-style:normal}
-@font-face{font-family:"Circular";src:url("../fonts/Circular/Circular-Book-WebPro/lineto-circular-pro-book.eot");src:url("../fonts/Circular/Circular-Book-WebPro/lineto-circular-pro-book.eot?#iefix") format("embedded-opentype"),url("../fonts/Circular/Circular-Book-WebPro/lineto-circular-pro-book.woff2") format("woff2"),url("../fonts/Circular/Circular-Book-WebPro/lineto-circular-pro-book.woff") format("woff");font-weight:200;font-style:normal}
-@font-face{font-family:"Circular";src:url("../fonts/Circular/Circular-Medium-WebPro/lineto-circular-pro-medium.eot");src:url("../fonts/Circular/Circular-Medium-WebPro/lineto-circular-pro-medium.eot?#iefix") format("embedded-opentype"),url("../fonts/Circular/Circular-Medium-WebPro/lineto-circular-pro-medium.woff2") format("woff2"),url("../fonts/Circular/Circular-Medium-WebPro/lineto-circular-pro-medium.woff") format("woff");font-weight:400;font-style:normal}
-
 
 
 
