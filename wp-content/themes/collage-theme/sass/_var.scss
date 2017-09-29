@@ -1,33 +1,33 @@
 //COLOURS
-
+$gray-border: 1px solid #E1E1E3;
+$blue-border: 1px solid rgba(62,105,233,0.21);
 $lightgray: #717B8A;
-$grey: #3B3D4D;
+$gray: #3B3D4D;
 $midnight: #212C35;
 $lightblue: #F0F4FF;
 $blue: #3F76F2;
 
+// FONT FAMILIES
 @font-face {
-    font-family: 'Circular';
-    src: url('fonts/lineto-circular-pro-book.woff'),
-       url('fonts/lineto-circular-pro-book.woff2');
+	font-family: 'Circular Book';
+	src: url('fonts/lineto-circular-pro-book.woff'),
+		url('fonts/lineto-circular-pro-book.woff2');
 }
 @font-face {
-    font-family: 'Circular';
-    src: url('fonts/lineto-circular-pro-medium.woff'),
-       url('fonts/lineto-circular-pro-medium.woff2');
+	font-family: 'Circular Medium';
+	src: url('fonts/lineto-circular-pro-medium.woff'),
+		url('fonts/lineto-circular-pro-medium.woff2');
 }
 @font-face {
-    font-family: 'Circular';
-    src: url('fonts/lineto-circular-pro-bold.woff'),
-         url('fonts/lineto-circular-pro-bold.woff2');
+	font-family: 'Circular Bold';
+	src: url('fonts/lineto-circular-pro-bold.woff'),
+		url('fonts/lineto-circular-pro-bold.woff2');
 }
+$book: 'Circular Book', sans-serif;
+$medium: 'Circular Medium', sans-serif;
+$bold: 'Circular Bold', sans-serif;
 
-//TRANSITIONS
-
-$color-transition: 0.5s color ease;
-$bg-transition: 0.5s background ease;
-
-// BUTTONS
-
-$button-height: 27px;
-$button-width: 35px;
+// 	LINE HEIGHTS
+$rem-1-quarter: 1.25rem;
+$rem-1: 1rem;
+$rem-2: 2rem;

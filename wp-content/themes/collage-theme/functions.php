@@ -48,9 +48,8 @@ We'll let WordPress add them to our templates automatically instead
 of writing our own link tags in the header. */
 
 function collage_styles(){
-	wp_enqueue_style('style', get_stylesheet_uri() );
 	wp_enqueue_style('basscss', 'https://unpkg.com/basscss@8.0.2/css/basscss.min.css');
-	// wp_enqueue_style('tablepress', '../plugins/tablepress/css/default.min.css');
+	wp_enqueue_style('style', get_stylesheet_uri() );
 }
 
 add_action( 'wp_enqueue_scripts', 'collage_styles');
@@ -59,7 +58,6 @@ We'll let WordPress add them to our templates automatically instead
 of writing our own script tags in the header and footer. */
 
 function collage_scripts() {
-
 	//Don't use WordPress' local copy of jquery, load our own version from a CDN instead
 	wp_deregister_script('jquery');
   wp_enqueue_script(
