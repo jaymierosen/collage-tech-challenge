@@ -13,9 +13,9 @@
 				<!-- align left -->
 				<div class="sm-block table-cell left-align sm-center list-reset">
 					<div class="logo"><!--logoFooter-->
-						<?php $logoFooter = get_field('logo_header', 'option'); 
+						<?php $logoFooter = get_field('logo_header'); 
 						?>
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img src="<?php echo $logoFooter['url'] ?>" alt="collage-logo" /></a>
+						<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img  class="collage-logo" src="<?php echo $logoFooter['url'] ?>" alt="collage-logo" /></a>
 					</div><!--logoFooter-->
 				</div>
 				<!-- align left -->

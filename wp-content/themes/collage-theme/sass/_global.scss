@@ -21,7 +21,7 @@ body {
 		.container {
 			margin: 0 auto;
 			max-width: 1200px;
-			padding: 0 3%;
+			padding: 0 24px;
 		}
 		// HEADINGS
 		h2 {
@@ -31,6 +31,9 @@ body {
 		h3 {
 			letter-spacing: -0.3px;
 			font-size: $rem-2;
+		}
+		h4 {
+			font-size: 0.9375rem;
 		}
 		h6 {
 			font-size: $rem-1-quarter;
@@ -97,6 +100,9 @@ body {
 			border-top: $blue-border;
 		}
 		// LOGOS
+		.collage-logo {
+			height: 31px;
+		}
 		.company-logo {
 			height: 52px;
 		}
