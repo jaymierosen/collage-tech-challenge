@@ -91,6 +91,7 @@
 					<?php $img_bg_testimonial_3 = get_field('img_bg_testimonial_3'); ?>
 					<!-- slider gallery -->
 					<!-- Flickity HTML init -->
+					<h3 class="center">Testimonials</h3>
 					<div class="carousel"
   data-flickity='{ "percentPosition": false, "wrapAround": true, "imagesLoad": true }'>
 						<div class="carousel-cell">
