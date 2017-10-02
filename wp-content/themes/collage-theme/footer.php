@@ -29,6 +29,7 @@
 		</nav>
 	</div>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 	// scripts.js, plugins.js and jquery are enqueued in functions.php
 	/* Google Analytics! */
