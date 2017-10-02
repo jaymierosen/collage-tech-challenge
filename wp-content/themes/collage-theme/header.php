@@ -39,7 +39,7 @@
 								?>
 								<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="collage-logo" src="<?php echo $logoHeader['url'] ?>" alt="collage-logo" /></a>
 							</div><!--logoHeader-->
-							<div class="sm-pt2 py4 sm-mt3 mt3">
+							<div class="sm-pt2 sm-mt3 mt3">
 								<div class="max-width-2">
 									<h2 class="gray"><?php the_field('headline_hero') ?></h2>
 									<div class="h6 fw-l mt2 gray">
@@ -48,6 +48,29 @@
 									<div class="mb1">
 										<a href=""><button class="btn"><?php the_field('btn_hero'); ?></button></a>
 									</div>
+									<div class="col col-1">
+										<ul>
+											<?php $iconCheck = get_field('icon_check'); ?>
+											<?php $iconMonitor = get_field('icon_monitor'); ?>
+											<span><img src="<?php echo $iconMonitor['url'] ?>" alt=""></span>
+											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
+											<li><?php the_field('list_hero_item_1') ?></li>
+											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
+											<li><?php the_field('list_hero_item_2') ?></li>
+											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
+											<li><?php the_field('list_hero_item_3') ?></li>
+										</ul>
+									</div>
+									<div class="col col-2">
+										<ul>
+											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
+											<li><?php the_field('list_hero_item_4') ?></li>
+											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
+											<li><?php the_field('list_hero_item_5') ?></li>
+											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
+											<li><?php the_field('list_hero_item_6') ?></li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -55,8 +78,8 @@
 				</div>
 			</div>
 			<?php $imgHero = get_field('img_hero'); ?>
-			<div class="hero-background absolute top-0 right-0 col-12 md-col-6 md-hide-below" style="background-image:url(<?php echo $imgHero['url'] ?>); background-size: cover; background-position: top; background-repeat: no-repeat; ">
-				<div class="table pl4 pb4" style="height:100%;padding-top:230px;">
+			<div class="hero-background" style="background-image:url(<?php echo $imgHero['url'] ?>); background-size: cover; background-position: top; background-repeat: no-repeat; height: 76%; ">
+				<div class="table pl4 pb4">
 					<div class="table-cell align-bottom pl4 pb4">
 						<div class="col-12 md-col-7">
 							<div class="fw-l">
@@ -73,23 +96,25 @@
 					</div>
 				</div>
 			</div>
-			<div class="container py3">
+			<div class="py3 companies">
 				<!-- companies -->
-				<div class="clearfix mt3 sm-hide-below">
-					<!-- got rid of a lot of unncessary divs here -->
-					<h4 class="blue center"><?php the_field('headline_companies'); ?></h4>
-					<ul class="center">
-						<?php $logoWealthsimple = get_field('logo_wealthsimple'); ?>
-						<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoWealthsimple['url'] ?>" alt="Wealthsimple logo" /></a></li>
-						<?php $logoPurCompany = get_field('logo_pur_company'); ?>
-						<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoPurCompany['url'] ?>" alt="collage-logo" /></a></li>
-						<?php $logoTalentMinded = get_field('logo_talent_minded'); ?>
-						<li class="inline-block px1below"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoTalentMinded['url'] ?>" alt="collage-logo" /></a></li>
-						<?php $logoNarcity = get_field('logo_narcity'); ?>
-						<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoNarcity['url'] ?>" alt="collage-logo" /></a></li>
-						<?php $logoSweetTooth = get_field('logo_sweet_tooth'); ?>
-						<li class="inline-block px1below"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoSweetTooth['url'] ?>" alt="collage-logo" /></a></li>
-					</ul>
+				<div class="container">
+					<div class="clearfix mt3 sm-hide-below">
+						<!-- got rid of a lot of unncessary divs here -->
+						<h4 class="blue center"><?php the_field('headline_companies'); ?></h4>
+						<ul class="center">
+							<?php $logoWealthsimple = get_field('logo_wealthsimple'); ?>
+							<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoWealthsimple['url'] ?>" alt="Wealthsimple logo" /></a></li>
+							<?php $logoPurCompany = get_field('logo_pur_company'); ?>
+							<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoPurCompany['url'] ?>" alt="collage-logo" /></a></li>
+							<?php $logoTalentMinded = get_field('logo_talent_minded'); ?>
+							<li class="inline-block px1below"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoTalentMinded['url'] ?>" alt="collage-logo" /></a></li>
+							<?php $logoNarcity = get_field('logo_narcity'); ?>
+							<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoNarcity['url'] ?>" alt="collage-logo" /></a></li>
+							<?php $logoSweetTooth = get_field('logo_sweet_tooth'); ?>
+							<li class="inline-block px1below"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoSweetTooth['url'] ?>" alt="collage-logo" /></a></li>
+						</ul>
+					</div>
 				</div>
 				<!-- companies -->
 			</div>

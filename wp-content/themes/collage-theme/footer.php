@@ -8,19 +8,17 @@
 				<a href="#"><button class="btn"><?php the_field('btn_footer') ?></button></a>
 			</div>
 		</div>
-		<nav class="footer-nav border-top-blue clearfix py3 col col-12 relative full-width">
-			<div class="table clearfix">
+		<nav class="footer-nav border-top-blue clearfix py3 col-12 relative full-width">
+			<div class="clearfix">
 				<!-- align left -->
-				<div class="sm-block table-cell left-align sm-center list-reset">
-					<div class="logo"><!--logoFooter-->
-						<?php $logoFooter = get_field('logo_header'); 
-						?>
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img  class="collage-logo" src="<?php echo $logoFooter['url'] ?>" alt="collage-logo" /></a>
-					</div><!--logoFooter-->
-				</div>
+				<div class="logo"><!--logoFooter-->
+					<?php $logoFooter = get_field('logo_header'); 
+					?>
+					<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img  class="collage-logo" src="<?php echo $logoFooter['url'] ?>" alt="collage-logo" /></a>
+				</div><!--logoFooter-->
 				<!-- align left -->
 				<!-- align right -->
-				<div class="sm-block table-cell right-align sm-center sm-mt2">
+				<div class="footer-nav-links">
 					<?php wp_nav_menu( array(
 						'container' => false,
 						'theme_location' => 'primary'
