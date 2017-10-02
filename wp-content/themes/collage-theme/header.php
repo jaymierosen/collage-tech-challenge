@@ -29,94 +29,66 @@
 </head>
 <body>
 	<header>
-		<div class="page-container">
-			<div class="overflow-block md-hide-below">
-				<div class="container">
-					<div class="hero clearfix relative">
-						<div class="col col-12 md-col-6 relative z1">
-							<div class="logo"><!--logoHeader-->
-								<?php $logoHeader = get_field('logo_header'); 
-								?>
-								<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="collage-logo" src="<?php echo $logoHeader['url'] ?>" alt="collage-logo" /></a>
-							</div><!--logoHeader-->
-							<div class="sm-pt2 sm-mt3 mt3">
-								<div class="max-width-2">
-									<h2 class="gray"><?php the_field('headline_hero') ?></h2>
-									<div class="h6 fw-l mt2 gray">
-										<p class="hero-paragraph"><?php the_field('hero_paragraph'); ?></p>
-									</div>
-									<div class="mb1">
-										<a href=""><button class="btn"><?php the_field('btn_hero'); ?></button></a>
-									</div>
-									<div class="col col-1">
-										<ul>
-											<?php $iconCheck = get_field('icon_check'); ?>
-											<?php $iconMonitor = get_field('icon_monitor'); ?>
-											<span><img src="<?php echo $iconMonitor['url'] ?>" alt=""></span>
-											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
-											<li><?php the_field('list_hero_item_1') ?></li>
-											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
-											<li><?php the_field('list_hero_item_2') ?></li>
-											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
-											<li><?php the_field('list_hero_item_3') ?></li>
-										</ul>
-									</div>
-									<div class="col col-2">
-										<ul>
-											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
-											<li><?php the_field('list_hero_item_4') ?></li>
-											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
-											<li><?php the_field('list_hero_item_5') ?></li>
-											<span class="icon"><img src="<?php echo $iconCheck['url'] ?>" alt=""></span>
-											<li><?php the_field('list_hero_item_6') ?></li>
-										</ul>
-									</div>
+		<div class="page-container clearfix">
+			<div class="container clearfix">
+				<div class="hero">
+					<div class="logo"><!--logoHeader-->
+						<?php $logoHeader = get_field('logo_header'); ?>
+						<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="collage-logo" src="<?php echo $logoHeader['url'] ?>" alt="collage-logo" /></a>
+					</div><!--logoHeader-->
+					<div class="sm-pt2 sm-mt3 mt3">
+						<div>
+							<h2 class="gray"><?php the_field('headline_hero') ?></h2>
+							<div class="h6 fw-l mt2 gray">
+								<p class="hero-paragraph"><?php the_field('hero_paragraph'); ?></p>
+							</div>
+							<div class="mb1">
+								<a href=""><button class="btn"><?php the_field('btn_hero'); ?></button></a>
+							</div>
+							<div class="col col-1">
+								<ul>
+									<?php $iconMonitor = get_field('icon_monitor'); ?>
+									<?php $iconDatabase = get_field('icon_database'); ?>
+									<?php $iconEmpower = get_field('icon_empower'); ?>
+									<span class="icon"><img src="<?php echo $iconMonitor['url'] ?>" alt=""></span>
+									<li><?php the_field('list_hero_item_1') ?></li>
+									<span class="icon"><img src="<?php echo $iconDatabase['url'] ?>" alt=""></span>
+									<li><?php the_field('list_hero_item_2') ?></li>
+									<span class="icon"><img src="<?php echo $iconEmpower['url'] ?>" alt=""></span>
+									<li><?php the_field('list_hero_item_3') ?></li>
+								</ul>
+							</div>
+							<div class="col col-2">
+								<ul>
+									<?php $iconPerformance = get_field('icon_performance'); ?>
+									<?php $iconKey = get_field('icon_key'); ?>
+									<?php $iconTrack = get_field('icon_track'); ?>
+									<span class="icon"><img src="<?php echo $iconTrack['url'] ?>" alt=""></span>
+									<li><?php the_field('list_hero_item_4') ?></li>
+									<span class="icon"><img src="<?php echo $iconPerformance['url'] ?>" alt=""></span>
+									<li><?php the_field('list_hero_item_5') ?></li>
+									<span class="icon"><img src="<?php echo $iconKey['url'] ?>" alt=""></span>
+									<li><?php the_field('list_hero_item_6') ?></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php $imgHero = get_field('img_hero'); ?>
+				<div class="hero-background absolute top-0 right-0" style="background-image:url('<?php echo $imgHero['url'] ?>');background-position:top">
+					<div class="table" style="height:100%;">
+						<div class="table-cell align-bottom">
+							<div class="hero-quote-container">
+								<div class="fw-l white h6"><blockquote class="white"><?php the_field('hero_quote'); ?></blockquote></div>
+								<div class="mt2">
+									<?php $imgTestimonialHero = get_field('img_testimonial_hero') ?>
+									<div class="table-cell img-testimonial-hero align-middle list-reset"><img src="<?php echo $imgTestimonialHero['url']?>" height="40" alt="zaheer-merali"></div>
+									<cite class="white"><?php the_field('txt_testimonial_hero') ?></cite>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<?php $imgHero = get_field('img_hero'); ?>
-			<div class="hero-background" style="background-image:url(<?php echo $imgHero['url'] ?>); background-size: cover; background-position: top; background-repeat: no-repeat; height: 76%; ">
-				<div class="table pl4 pb4">
-					<div class="table-cell align-bottom pl4 pb4">
-						<div class="col-12 md-col-7">
-							<div class="fw-l">
-								<!-- adding blockquote element here -->
-								<blockquote class="white"><?php the_field('hero_quote'); ?></blockquote>
-								<div class="table mt2">
-									<div class="table-cell align-middle list-reset"><img src="" height="40" alt="zaheer-merali"></div>
-									<div class="table-cell align-middle pl2 h7 fw-n">
-										<cite class="white">Zaheer Merali, Eyecarrot</cite>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="py3 companies">
-				<!-- companies -->
-				<div class="container">
-					<div class="clearfix mt3 sm-hide-below">
-						<!-- got rid of a lot of unncessary divs here -->
-						<h4 class="blue center"><?php the_field('headline_companies'); ?></h4>
-						<ul class="center">
-							<?php $logoWealthsimple = get_field('logo_wealthsimple'); ?>
-							<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoWealthsimple['url'] ?>" alt="Wealthsimple logo" /></a></li>
-							<?php $logoPurCompany = get_field('logo_pur_company'); ?>
-							<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoPurCompany['url'] ?>" alt="collage-logo" /></a></li>
-							<?php $logoTalentMinded = get_field('logo_talent_minded'); ?>
-							<li class="inline-block px1below"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoTalentMinded['url'] ?>" alt="collage-logo" /></a></li>
-							<?php $logoNarcity = get_field('logo_narcity'); ?>
-							<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoNarcity['url'] ?>" alt="collage-logo" /></a></li>
-							<?php $logoSweetTooth = get_field('logo_sweet_tooth'); ?>
-							<li class="inline-block px1below"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoSweetTooth['url'] ?>" alt="collage-logo" /></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- companies -->
 			</div>
 		</div>
 	</header><!--/.header-->

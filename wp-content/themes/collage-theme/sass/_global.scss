@@ -27,12 +27,25 @@ body {
 			max-width: 1200px;
 			padding: 0 40px;
 		}
-		// LAYOUT 
+		// LAYOUT
+		.hero-quote-container {
+			padding: 350px 100px 350px 60px;
+				@media screen and (max-width: 650px) {
+					padding: 200px 100px 200px 60px;
+				}
+		}
+		.overflow-block .md-hide-below {
+			float: left;
+			width: 48%;
+		}
 		.max-width-2 {
 			max-width: 30rem;
 		}
 		.pl4 {
 			padding-top: 12rem;
+			@media screen and (max-width: 1040px) {
+				padding-right: 4rem;
+			}
 		}
 		// HEADINGS
 		h2 {
@@ -75,7 +88,10 @@ body {
 			color: $blue;
 			text-decoration: none;
 		}
-		// LISTS 
+		// LISTS
+		li {
+			color: $lightgray;
+		} 
 		header ul {
 			list-style-type: none;
 			padding-left: 0;
@@ -97,16 +113,36 @@ body {
 		// COLUMNS 
 		.col {
 			width: 48%;
+			float: left;
+				@media screen and (max-width: 768px) {
+					width: 100%;
+					float: none;
+					text-align: center;
+				}
 		}
 		.col.col-1 {
-			margin: 2rem 10px 4rem 0;
+			margin: 2rem 8px 4rem 0;
+				ul {
+					li {
+						font-size: 14px;
+					}
+				}
 		}
 		.col.col-2 {
-			margin: 2rem 0 4rem 0;
+			margin: 2rem 8px 4rem 0;
+				ul {
+					li {
+						font-size: 14px;
+					}
+				}
 		}
 		.col-3 {
 			width: 33%;
 			float: left;
+				@media screen and (max-width: 650px) {
+					float: none;
+					width: 100%;
+				}
 		}
 		// BUTTONS
 		.btn {
@@ -129,6 +165,47 @@ body {
 			margin: 0;
 			line-height: $rem-2;
 			font-family: $book;
+				@media screen and (max-width: 650px) {
+					font-size: 14px;
+					line-height: 1em;
+				}
+		}
+		cite {
+			@media screen and (max-width: 650px) {
+				font-size: 14px;
+				line-height: 1em;
+			}
+		}
+		.blockquote-container {
+			position: relative;
+			top: 222px;
+			margin: 0 60px;
+				@media screen and (max-width: 650px) {
+					top: 160px;
+				}
+				.img-testimonial-cite {
+					width: 52px;
+					height: 52px;
+				}
+				.img-testimonial-cite-container {
+					float: left;
+					width: 65px;
+				}
+				.txt-testimonial-cite-container {
+					float: left;
+					width: 200px;
+				}
+				h6 {
+					font-size: 14px;
+				}
+		}
+		.img-testimonial-hero {
+			float: left;
+			width: 60px;
+		}
+		.hero-quote-container cite {
+			float: left;
+			width: 200px;
 		}
 		// COLORS
 		.white {
@@ -157,12 +234,23 @@ body {
 		.collage-logo {
 			height: 31px;
 		}
+		footer .collage-logo {
+			@media screen and (max-width: 768px) {
+				text-align: center;
+				margin: 0 auto 20px auto;
+				display: block;
+			}
+		}
 		.company-logo {
 			height: 52px;
 		}
 		// ICONS
-		.icon img {
-			height: 30px;
+		.icon {
+			margin: 15px 0;
+			display: block;
+				img {
+					height: 30px;
+				}
 		}
 		.icon-goal img {
 			width: 70px;
@@ -173,12 +261,15 @@ body {
 		}
 		.carousel-cell {
 			width: 66%;
-			height: 200px;
+			height: 447px;
 			margin-right: 10px;
 			background: white;
 			border-radius: 5px;
 			counter-increment: carousel-cell;
 				img {
+					width: 100%;
+				}
+				@media screen and (max-width: 1040px) {
 					width: 100%;
 				}
 		}
@@ -188,17 +279,57 @@ body {
 		.flickity-prev-next-button.previous {
 			display: none;
 		}
-		// HEADER 
-		.hero-background {
-			background: black;
+		.flickity-page-dots {
+			margin: 40px 0 40px 0;
+			position: static;
 		}
+		.flickity-page-dots .dot {
+			background: $blue;
+		}
+		// HEADER 
+		.hero {
+			width: 47%;
+			float: left;
+				@media screen and (max-width: 1040px) {
+					width: 100%;
+					float: none;
+					max-width: 100%;
+				}
+		}
+		.hero-background {
+			float: left;
+			width: 47%;
+				@media screen and (max-width: 1040px) {
+					width: 100%;
+					position: relative;
+				}
+		}
+		// COMPANIES
 		.companies {
 			background: #F9FAFA;
 		}
+		.center {
+			li {
+				@media screen and (max-width: 768px) {
+					display: block;
+				}
+			}
+		}
+		// GOALS
+		.goals {
+			padding: 40px 0 0 0;
+		}
 		// HR TOOLS
 		.hr-tools-list {
-			width: 342px;
+			width: 48%;
+			float: left;
+			margin: 0 0 60px 0;
+				@media screen and (max-width: 768px) {
+					width: 100%;
+					float: none;
+				}
 				ul {
+					margin: 0;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
@@ -209,6 +340,14 @@ body {
 				img {
 					display: block;
 					width: 100%;
+				}
+		}
+		.img-employee-records-banner {
+			float: left;
+			width: 48%;
+				@media screen and (max-width: 768px) {
+					width: 100%;
+					float: none;
 				}
 		}
 		// FOOTER
@@ -223,6 +362,10 @@ body {
 								display: inline-block;
 								margin: 0 0 0 35px;
 								font-size: $rem-1;
+									@media screen and (max-width: 650px) {
+										display: block;
+										margin: 0;
+									}
 							}
 							a {
 								background: transparent;
@@ -233,10 +376,19 @@ body {
 				.logo {
 					float: left;
 					width: 100px;
+						@media screen and (max-width: 650px) {
+							float: none;
+							width: 100%;
+						}
 				}
 				.footer-nav-links {
 					float: right;
 					width: 460px;
+						@media screen and (max-width: 650px) {
+							float: none;
+							width: 100%;
+							text-align: center;
+						}
 				}
 		}
 }

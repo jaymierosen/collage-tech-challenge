@@ -6,6 +6,28 @@
 <?php get_header();  ?>
 <main><!-- main -->
 	<div class="page-container">
+			<div class="py3 companies">
+			<!-- companies -->
+			<div class="container">
+				<div class="clearfix mt3 sm-hide-below">
+					<!-- got rid of a lot of unncessary divs here -->
+					<h4 class="blue center"><?php the_field('headline_companies'); ?></h4>
+					<ul class="center">
+						<?php $logoWealthsimple = get_field('logo_wealthsimple'); ?>
+						<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoWealthsimple['url'] ?>" alt="Wealthsimple logo" /></a></li>
+						<?php $logoPurCompany = get_field('logo_pur_company'); ?>
+						<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoPurCompany['url'] ?>" alt="collage-logo" /></a></li>
+						<?php $logoTalentMinded = get_field('logo_talent_minded'); ?>
+						<li class="inline-block px1below"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoTalentMinded['url'] ?>" alt="collage-logo" /></a></li>
+						<?php $logoNarcity = get_field('logo_narcity'); ?>
+						<li class="inline-block px1"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoNarcity['url'] ?>" alt="collage-logo" /></a></li>
+						<?php $logoSweetTooth = get_field('logo_sweet_tooth'); ?>
+						<li class="inline-block px1below"><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><img class="company-logo" src="<?php echo $logoSweetTooth['url'] ?>" alt="collage-logo" /></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- companies -->
+		</div>
 		<div class="container"> <!-- container -->
 			<div class="content"> <!-- content -->
 				<!-- hr tools -->
@@ -14,9 +36,9 @@
 						<h3 class="center"><?php the_field('headline_tools'); ?></h3>
 						<p class="center"><?php the_field('txt_tools'); ?></p>
 					</div>
-					<div class="table clearfix full-width sm-mt4">
+					<div class="clearfix full-width sm-mt4">
 						<?php $imgEmployeeRecordsBanner = get_field('img_employee_records_banner'); ?>
-						<div class="sm-block table-cell align-middle"><img src="<?php echo $imgEmployeeRecordsBanner['url'] ?>" class="fit mb3" width="770" alt=""/></div>
+						<div class="img-employee-records-banner sm-block table-cell align-middle"><img src="<?php echo $imgEmployeeRecordsBanner['url'] ?>" class="fit mb3" width="770" alt=""/></div>
 						<div class="hr-tools-list">
 							<ul class="list-reset">
 								<?php $iconCheck = get_field('icon_check'); ?>
@@ -64,16 +86,61 @@
 				<!-- achieve, save and reduce  -->
 				<!-- testimonials -->
 				<section class="testimonials">
-					<?php $testimonial_1 = get_field('testimonial_1'); ?>
-					<?php $testimonial_2 = get_field('testimonial_2'); ?>
-					<?php $testimonial_3 = get_field('testimonial_3'); ?>
+					<?php $img_bg_testimonial_1 = get_field('img_bg_testimonial_1'); ?>
+					<?php $img_bg_testimonial_2 = get_field('img_bg_testimonial_2'); ?>
+					<?php $img_bg_testimonial_3 = get_field('img_bg_testimonial_3'); ?>
 					<!-- slider gallery -->
 					<!-- Flickity HTML init -->
 					<div class="carousel"
   data-flickity='{ "percentPosition": false, "wrapAround": true, "imagesLoad": true }'>
-						<div class="carousel-cell"><p>some text</p><img src="<?php echo $testimonial_1['url'] ?>" alt=""></div>
-						<div class="carousel-cell"><p>some text</p><img src="<?php echo $testimonial_2['url'] ?>" alt=""></div>
-						<div class="carousel-cell"><p>some text</p><img src="<?php echo $testimonial_3['url'] ?>" alt=""></div>
+						<div class="carousel-cell">
+							<div class="blockquote-container">
+								<blockquote class="testimonial"><?php the_field('txt_testimonial_1') ?></blockquote>
+								<?php $img_testimonial_cite_1 = get_field('img_testimonial_cite_1') ?>
+								<div class="table mt2">
+									<div class="img-testimonial-cite-container">
+										<img class="img-testimonial-cite" src="<?php echo $img_testimonial_cite_1['url'] ?>" alt="">
+									</div>
+									<div class="txt-testimonial-cite-container">
+										<cite class="white"><?php the_field('txt_testimonial_cite_1') ?></cite>
+										<h6 class="white"><?php the_field('txt_testimonial_cite_title_1') ?></h6>
+									</div>
+								</div>
+							</div>
+							<img src="<?php echo $img_bg_testimonial_1['url'] ?>" alt="">
+						</div>
+						<div class="carousel-cell">
+							<div class="blockquote-container">
+								<blockquote class="testimonial"><?php the_field('txt_testimonial_2') ?></blockquote>
+								<?php $img_testimonial_cite_2 = get_field('img_testimonial_cite_2') ?>
+								<div class="table mt2">
+									<div class="img-testimonial-cite-container">
+										<img class="img-testimonial-cite" src="<?php echo $img_testimonial_cite_2['url'] ?>" alt="">
+									</div>
+									<div class="txt-testimonial-cite-container">
+										<cite class="white"><?php the_field('txt_testimonial_cite_2') ?></cite>
+										<h6 class="white"><?php the_field('txt_testimonial_cite_title_2') ?></h6>
+									</div>
+								</div>
+							</div>
+							<img src="<?php echo $img_bg_testimonial_2['url'] ?>" alt="">
+						</div>
+						<div class="carousel-cell">
+							<div class="blockquote-container">
+								<blockquote class="testimonial"><?php the_field('txt_testimonial_3') ?></blockquote>
+								<?php $img_testimonial_cite_3 = get_field('img_testimonial_cite_3') ?>
+								<div class="table mt2 clearfix">
+									<div class="img-testimonial-cite-container">
+										<img class="img-testimonial-cite" src="<?php echo $img_testimonial_cite_3['url'] ?>" alt="">
+									</div>
+									<div class="txt-testimonial-cite-container">
+										<cite class="white"><?php the_field('txt_testimonial_cite_3') ?></cite>
+										<h6 class="white"><?php the_field('txt_testimonial_cite_title_3') ?></h6>
+									</div>
+								</div>
+							</div>
+							<img src="<?php echo $img_bg_testimonial_3['url'] ?>" alt="">
+						</div>
 					</div>
 					<!-- slider gallery -->
 				</section>
