@@ -1,11 +1,7 @@
 <?php
-
 /** Tell WordPress to run theme_setup() when the 'after_setup_theme' hook is run. */
-
 if ( ! function_exists( 'theme_setup' ) ):
-
 function theme_setup() {
-
 	/* This theme uses post thumbnails (aka "featured images")
 	*  all images will be cropped to thumbnail size (below), as well as
 	*  a square size (also below). You can add more of your own crop
@@ -13,22 +9,16 @@ function theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(120, 90, true);
 	add_image_size('square', 150, 150, true);
-
-
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
-
 	// add option to upload logo in theme customizer
 	add_theme_support( 'custom-logo' );
-
-
 	/* This theme uses wp_nav_menu() in one location.
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
 		'primary' => 'Primary Navigation'
 	) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -36,85 +26,74 @@ function theme_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
-
-
 }
 endif;
-
 add_action( 'after_setup_theme', 'theme_setup' );
-
 /* Add all our CSS files here.
 We'll let WordPress add them to our templates automatically instead
 of writing our own link tags in the header. */
-
 function collage_styles(){
 	wp_enqueue_style('basscss', 'https://unpkg.com/basscss@8.0.2/css/basscss.min.css');
+	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+	wp_enqueue_style('flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css');
 	wp_enqueue_style('style', get_stylesheet_uri() );
 }
-
 add_action( 'wp_enqueue_scripts', 'collage_styles');
 /* Add all our JavaScript files here.
 We'll let WordPress add them to our templates automatically instead
 of writing our own script tags in the header and footer. */
-
 function collage_scripts() {
 	//Don't use WordPress' local copy of jquery, load our own version from a CDN instead
 	wp_deregister_script('jquery');
-  wp_enqueue_script(
-	'jquery',
-	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js",
-	false, //dependencies
-	null, //version number
-	true //load in footer
-  );
-
-  wp_enqueue_script(
-	'plugins', //handle
-	get_template_directory_uri() . '/js/plugins.js', //source
-	false, //dependencies
-	null, // version number
-	true //load in footer
-  );
-
-  wp_enqueue_script(
-	'scripts', //handle
-	get_template_directory_uri() . '/js/main.min.js', //source
-	array( 'jquery', 'plugins' ), //dependencies
-	null, // version number
-	true //load in footer
-  );
+	wp_enqueue_script(
+		'jquery',
+		"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js",
+		false, //dependencies
+		null, //version number
+		true //load in footer
+	);
+	wp_enqueue_script(
+		'plugins', //handle
+		get_template_directory_uri() . '/js/plugins.js', //source
+		false, //dependencies
+		null, // version number
+		true //load in footer
+	);
+	wp_enqueue_script(
+		'scripts', //handle
+		get_template_directory_uri() . '/js/main.min.js', //source
+		array( 'jquery', 'plugins' ), //dependencies
+		null, // version number
+		true //load in footer
+	);
+	wp_enqueue_script(
+		'fontawesome', 'https://use.fontawesome.com/f1bf759a8e.js'
+	);
+	wp_enqueue_script(
+		'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js'
+	);
 }
-
 add_action( 'wp_enqueue_scripts', 'collage_scripts');
-
-
 /* Custom Title Tags */
-
 function collage_wp_title( $title, $sep ) {
 	global $paged, $page;
-
 	if ( is_feed() ) {
 		return $title;
 	}
-
 	// Add the site name.
 	$title .= get_bloginfo( 'name', 'display' );
-
 	// Add the site description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) ) {
 		$title = "$title $sep $site_description";
 	}
-
 	// Add a page number if necessary.
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'collage' ), max( $paged, $page ) );
 	}
-
 	return $title;
 }
 add_filter( 'wp_title', 'collage_wp_title', 10, 2 );
-
 /*
   Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
@@ -123,8 +102,6 @@ function collage_page_menu_args( $args ) {
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'collage_page_menu_args' );
-
-
 /*
  * Sets the post excerpt length to 40 characters.
  */
@@ -132,14 +109,12 @@ function collage_excerpt_length( $length ) {
 	return 40;
 }
 add_filter( 'excerpt_length', 'collage_excerpt_length' );
-
 /*
  * Returns a "Continue Reading" link for excerpts
  */
 function collage_continue_reading_link() {
 	return ' <a href="'. get_permalink() . '">Continue reading <span class="meta-nav">&rarr;</span></a>';
 }
-
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and collage_continue_reading_link().
  */
@@ -147,7 +122,6 @@ function collage_auto_excerpt_more( $more ) {
 	return ' &hellip;' . collage_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'collage_auto_excerpt_more' );
-
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.
  */
@@ -158,8 +132,6 @@ function collage_custom_excerpt_more( $output ) {
 	return $output;
 }
 add_filter( 'get_the_excerpt', 'collage_custom_excerpt_more' );
-
-
 /*
  * Register a single widget area.
  * You can register additional widget areas by using register_sidebar again
@@ -177,11 +149,8 @@ function collage_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-
 }
-
 add_action( 'widgets_init', 'collage_widgets_init' );
-
 /**
  * Removes the default styles that are packaged with the Recent Comments widget.
  */
@@ -190,8 +159,6 @@ function collage_remove_recent_comments_style() {
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
 add_action( 'widgets_init', 'collage_remove_recent_comments_style' );
-
-
 if ( ! function_exists( 'collage_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post—date/time and author.
@@ -212,7 +179,6 @@ function collage_posted_on() {
 	);
 }
 endif;
-
 if ( ! function_exists( 'collage_posted_in' ) ) :
 /**
  * Prints HTML with meta information for the current post (category, tags and permalink).
@@ -237,9 +203,7 @@ function collage_posted_in() {
 	);
 }
 endif;
-
 /* Get rid of junk! - Gets rid of all the crap in the header that you dont need */
-
 function clean_stuff_up() {
 	// windows live
 	remove_action('wp_head', 'rsd_link');
@@ -250,26 +214,20 @@ function clean_stuff_up() {
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	remove_action( 'wp_head', 'feed_links', 3 );
 }
-
 add_action('init', 'clean_stuff_up');
-
-
 /* Here are some utility helper functions for use in your templates! */
-
 /* pre_r() - makes for easy debugging. <?php pre_r($post); ?> */
 function pre_r($obj) {
 	echo "<pre>";
 	print_r($obj);
 	echo "</pre>";
 }
-
 /* is_blog() - checks various conditionals to figure out if you are currently within a blog page */
 function is_blog () {
 	global  $post;
 	$posttype = get_post_type($post );
 	return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( $posttype == 'post')  ) ? true : false ;
 }
-
 /* get_post_parent() - Returns the current posts parent, if current post if top level, returns itself */
 function get_post_parent($post) {
 	if ($post->post_parent) {

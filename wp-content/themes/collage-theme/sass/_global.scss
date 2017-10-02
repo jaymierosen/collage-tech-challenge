@@ -1,4 +1,7 @@
 //GLOBAL STYLES
+html { 
+	overflow-y: scroll; 
+}
 body {
 	position: relative;
 	min-height: 100%;
@@ -163,6 +166,27 @@ body {
 		}
 		.icon-goal img {
 			width: 70px;
+		}
+		// CAROUSEL SLIDER GALLERY
+		.carousel {
+			background: white;
+		}
+		.carousel-cell {
+			width: 66%;
+			height: 200px;
+			margin-right: 10px;
+			background: white;
+			border-radius: 5px;
+			counter-increment: carousel-cell;
+				img {
+					width: 100%;
+				}
+		}
+		.flickity-prev-next-button.next {
+			display: none;
+		}
+		.flickity-prev-next-button.previous {
+			display: none;
 		}
 		// HEADER 
 		.hero-background {

@@ -64,10 +64,18 @@
 				<!-- achieve, save and reduce  -->
 				<!-- testimonials -->
 				<section class="testimonials">
-					<?php // Start the loop ?>
-						<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-							<?php the_content(); ?>
-					<?php endwhile; // end the loop?>
+					<?php $testimonial_1 = get_field('testimonial_1'); ?>
+					<?php $testimonial_2 = get_field('testimonial_2'); ?>
+					<?php $testimonial_3 = get_field('testimonial_3'); ?>
+					<!-- slider gallery -->
+					<!-- Flickity HTML init -->
+					<div class="carousel"
+  data-flickity='{ "percentPosition": false, "wrapAround": true, "imagesLoad": true }'>
+						<div class="carousel-cell"><p>some text</p><img src="<?php echo $testimonial_1['url'] ?>" alt=""></div>
+						<div class="carousel-cell"><p>some text</p><img src="<?php echo $testimonial_2['url'] ?>" alt=""></div>
+						<div class="carousel-cell"><p>some text</p><img src="<?php echo $testimonial_3['url'] ?>" alt=""></div>
+					</div>
+					<!-- slider gallery -->
 				</section>
 				<!-- testimonials -->
 			</div> <!-- content -->
