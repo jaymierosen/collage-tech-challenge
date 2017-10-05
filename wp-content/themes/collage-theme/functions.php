@@ -44,13 +44,19 @@ We'll let WordPress add them to our templates automatically instead
 of writing our own script tags in the header and footer. */
 function collage_scripts() {
 	//Don't use WordPress' local copy of jquery, load our own version from a CDN instead
-	wp_deregister_script('jquery');
+	// wp_deregister_script('jquery');
+	// wp_enqueue_script(
+	//     'jquery',
+	//     "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js",
+	//     false, //dependencies
+	//     null, //version number
+	//     true //load in footer
+	// );
 	wp_enqueue_script(
-		'jquery',
-		"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js",
-		false, //dependencies
-		null, //version number
-		true //load in footer
+		'fontawesome', 'https://use.fontawesome.com/f1bf759a8e.js'
+	);
+	wp_enqueue_script(
+		'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js'
 	);
 	wp_enqueue_script(
 		'plugins', //handle
@@ -65,12 +71,6 @@ function collage_scripts() {
 		array( 'jquery', 'plugins' ), //dependencies
 		null, // version number
 		true //load in footer
-	);
-	wp_enqueue_script(
-		'fontawesome', 'https://use.fontawesome.com/f1bf759a8e.js'
-	);
-	wp_enqueue_script(
-		'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js'
 	);
 }
 add_action( 'wp_enqueue_scripts', 'collage_scripts');

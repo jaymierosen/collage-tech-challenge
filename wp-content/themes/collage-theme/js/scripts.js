@@ -1,5 +1,5 @@
-$(function(){
-	$(function() {
+
+	jQuery(function ($) { 
 		// SLIDER GALLERY //
 		// when the next link is clicked
 		// show the card with the class of .card-shown
@@ -56,4 +56,3 @@ $(function(){
 			$('.carousel-inner').append(card);
 		});
 	}); //end of document ready
-});

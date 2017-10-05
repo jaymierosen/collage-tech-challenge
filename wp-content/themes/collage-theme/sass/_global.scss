@@ -30,8 +30,10 @@ body {
 		// LAYOUT
 		.hero-quote-container {
 			padding: 350px 100px 350px 60px;
+			margin: 0 auto;
+			width: 100%;
 				@media screen and (max-width: 650px) {
-					padding: 200px 100px 200px 60px;
+					padding: 20px;
 				}
 		}
 		.overflow-block .md-hide-below {
@@ -50,11 +52,18 @@ body {
 		// HEADINGS
 		h2 {
 			line-height: 3.5rem;
-			font-size: 2.5rem;
+			font-size: $rem-2-half;
+				@media screen and (max-width: 400px) {
+					font-size: $rem-2;
+					line-height: $rem-2-half;
+				}
 		}
 		h3 {
 			letter-spacing: -0.3px;
 			font-size: $rem-2;
+				@media screen and (max-width: 400px) {
+					font-size: $rem-1-quarter;
+				}
 		}
 		h4 {
 			font-size: 0.9375rem;
@@ -71,6 +80,9 @@ body {
 			color: $lightgray;
 			font-size: $rem-1-quarter;
 			line-height: $rem-2;
+			@media screen and (max-width: 400px) {
+				font-size: $rem-1;
+			}
 		}
 		.small {
 			font-size: $rem-1;
@@ -206,6 +218,9 @@ body {
 		.hero-quote-container cite {
 			float: left;
 			width: 200px;
+				@media screen and (max-width: 400px) {
+					margin: 0 0 20px 0;
+				}
 		}
 		// COLORS
 		.white {

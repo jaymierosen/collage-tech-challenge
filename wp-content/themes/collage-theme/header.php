@@ -75,7 +75,7 @@
 					</div>
 				</div>
 				<?php $imgHero = get_field('img_hero'); ?>
-				<div class="hero-background absolute top-0 right-0" style="background-image:url('<?php echo $imgHero['url'] ?>');background-position:top">
+				<div class="hero-background absolute top-0 right-0" style="background-image:url('<?php echo $imgHero['url'] ?>');background-position:top; background-size: cover;">
 					<div class="table" style="height:100%;">
 						<div class="table-cell align-bottom">
 							<div class="hero-quote-container">
